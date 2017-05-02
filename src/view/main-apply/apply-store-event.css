@@ -1,0 +1,503 @@
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+	width: 1px;
+	height: 16px;
+	background-color: white;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px white;
+	border-radius: 10px;
+	background-color: white;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px white;
+	background-color: white;
+}
+
+:horizontal
+/*//horizontal伪类适用于任何水平方向上的滚动条*/
+
+:vertical
+/*//vertical伪类适用于任何垂直方向的滚动条*/
+
+:decrement
+/*//decrement伪类适用于按钮和轨道碎片。表示递减的按钮或轨道碎片，例如可以使区域向上或者向右移动的区域和按钮*/
+
+:increment
+/*//increment伪类适用于按钮和轨道碎片。表示递增的按钮或轨道碎片，例如可以使区域向下或者向左移动的区域和按钮*/
+
+:start
+/*//start伪类适用于按钮和轨道碎片。表示对象（按钮 轨道碎片）是否放在滑块的前面*/
+
+:end
+/*//end伪类适用于按钮和轨道碎片。表示对象（按钮 轨道碎片）是否放在滑块的后面*/
+
+:double-button
+/*//double-button伪类适用于按钮和轨道碎片。判断轨道结束的位置是否是一对按钮。也就是轨道碎片紧挨着一对在一起的按钮。*/
+
+:single-button
+/*//single-button伪类适用于按钮和轨道碎片。判断轨道结束的位置是否是一个按钮。也就是轨道碎片紧挨着一个单独的按钮。*/
+
+:no-button
+/*no-button伪类表示轨道结束的位置没有按钮。*/
+
+:corner-present
+/*//corner-present伪类表示滚动条的角落是否存在。*/
+
+:window-inactive
+/*//适用于所有滚动条，表示包含滚动条的区域，焦点不在该窗口的时候。*/
+
+::-webkit-scrollbar-track-piece:start {
+/*滚动条上半边或左半边*/
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+/*当焦点不在当前区域滑块的状态*/
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:hover {
+/*当鼠标在水平滚动条下面的按钮上的状态*/
+}
+
+.apply-store-event {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
+/* www.divcss5.com公共分页CSS代码 */ 
+/*.apply-store-event BODY { 
+FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+ PADDING-LEFT: 25px; 
+} */
+/* CSS 翻页代码 */ 
+
+
+
+
+
+.apply-store-event .table-class{
+    position:relative;
+}
+.apply-store-event .table-class-head{
+    position:relative;
+}
+.apply-store-event .item-table-two-tr{
+     position: relative;
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.apply-store-event .item-table-two{
+    position:relative;
+    float:left;
+   width:100%;
+   min-height:2em;
+   max-height: 12em;
+   overflow: scroll;
+   line-height:1.5em;
+}
+.apply-store-event .img-td{
+    width:2em;
+
+
+}
+
+
+
+
+.apply-store-event .el-input__inner {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid rgb(236,230,211);
+    box-sizing: border-box;
+    color: #1f2d3d;
+    display: block;
+    font-size: inherit;
+    height: 36px;
+    line-height: 1;
+    outline: 0;
+    padding: 3px 10px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+
+.apply-store-event .el-input__icon {
+    position: absolute;
+    width: 35px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: rgb(236,230,211);
+    transition: all .3s;
+}
+.apply-store-event .el-checkbox+.el-checkbox{
+        margin-left: 0px;
+}
+.apply-store-event .el-upload {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    height: 1.5em;
+    line-height: 1.5em;
+    width: 3em;
+    border-radius: 3px;
+    
+}
+.apply-store-event  .el-checkbox__input.is-checked .el-checkbox__inner {
+    /*background-color: rgba(253,215,133,0.4);
+    border-color: rgba(253,215,133,0.4);*/
+       border-color: rgb(236,230,211);
+    background: rgb(236,230,211);
+}
+
+.apply-store-event .el-radio__input .is-checked .el-radio__inner {
+    /*border-color: rgba(253,215,133,0.4);
+    background: rgba(253,215,133,0.4);*/
+       border-color: rgb(236,230,211);
+    background: rgb(236,230,211);
+}
+
+ .el-button--primary {
+    color: #fff;
+    /*background-color: rgba(253,215,133,0.4);
+    border-color: rgba(253,215,133,0.4);*/
+       border-color: rgba(208,136,41,8);
+    background: rgba(208,136,41,8);
+}
+
+
+.apply-store-event .el-radio__input.is-checked .el-radio__inner{
+    border-color: rgb(236,230,211);
+    background: rgb(236,230,211);
+        /*border-color: rgba(253,215,133,0.4);
+    background: rgba(253,215,133,0.4);*/
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+      .apply-store-event .body-main-scroll{
+      width:80%;
+    margin:3.5em 0 1em 10em;
+        border: 1px solid rgb(236, 230, 211);
+        /*height:500px;*/
+       overflow: hidden;;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+.apply-store-event .body-main{
+   width:103%;
+       /*height:500px;*/
+        overflow-y:scroll;
+}
+}
+@media screen and (max-width: 800px) {
+    .apply-store-event .body-main-scroll{
+         width:94%;
+    margin:3.5em 0 1em 3%;
+      overflow:hidden;
+          border: 1px solid rgb(236, 230, 211);
+    
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+.apply-store-event .body-main{
+    width:103%;
+       /*height:500px;*/
+        overflow-y:scroll;
+    
+}
+}
+@media screen and (min-width: 1000px) and (max-width: 1050px) {
+.apply-store-event .height-sixh-thou{
+    height:800px;
+}
+}
+.apply-store-event .body-main-head{
+ height:2.4em;
+ line-height: 3em;
+ color:rgb(114,113,113);
+ font-size:1.5em;
+ text-align: left;
+ width:91%;
+ margin:0 0 0 3%;
+ border-bottom: 1px solid rgb(236, 230, 211);
+
+}
+.apply-store-event .body-main-headt{
+ height:3em;
+ line-height: 3em;
+     border-bottom: 1px solid rgb(236, 230, 211);
+      width:91%;
+      float:left;
+ margin:1em 0 1em 3%;
+}
+
+
+
+
+
+/*350 iphone 5*/
+@media screen and (max-width: 350px) {
+.apply-store-event .text-item-left{
+    width:40%;
+    display: inline-block;
+    height:2em;
+line-height:2em;
+float:left;
+text-align: left;
+text-indent: .2em;
+}
+}
+/*375 iphone 6*/
+@media screen and (min-width: 350px)and (max-width: 400px) {
+.apply-store-event .text-item-left{
+    width:40%;
+    display: inline-block;
+    height:2em;
+line-height:2em;
+float:left;
+text-align: left;
+text-indent: 1.4em;
+}
+}
+/*414 iphone 6s*/
+@media screen and (min-width: 400px)and (max-width: 600px) {
+.apply-store-event .text-item-left{
+    width:40%;
+    display: inline-block;
+    height:2em;
+line-height:2em;
+float:left;
+text-align: left;
+text-indent: 1.7em;
+}
+}
+/*7** ipad*/
+@media screen and (min-width: 600px)and (max-width: 800px)  {
+.apply-store-event .text-item-left{
+    width:40%;
+    display: inline-block;
+    height:2em;
+line-height:2em;
+float:left;
+text-align: left;
+text-indent: 5.5em;
+}
+}
+
+/* 小于1024 ipad pro*/
+@media screen and (max-width: 800px)  {
+    .apply-store-event .text-list{
+width:91%;
+margin:0 0 0 3%;
+}
+.apply-store-event .text-item-right{
+    width:60%;
+    display: inline-block;
+    min-height:2em;
+line-height:1em;
+float:left;
+    margin: 0 0 1em 0;
+text-align: left;
+}
+    .apply-store-event .text-item{
+width: 100%;
+min-height:3em;
+float:left;
+line-height:3em;
+}
+.apply-store-event  .width-smoll-handrud{
+    width:100% ;
+    margin-left:0px;
+}
+.apply-store-event .text-submit{
+height: 4em;
+line-height:4em;
+width:100%;
+float:left;
+}
+.apply-store-event .text-submit-left{
+    width:40%;
+    text-align: right;
+float:left;
+}
+.apply-store-event .text-submit-right{
+     width:40%;
+     margin: 0 0 0 20%;
+    text-align: left;
+    float:left;
+}
+.apply-store-event .padding-three-min{
+    padding: 0 0 0 3%;
+}
+ .table-class-out{
+    width:94%;
+    /*overflow:scroll;*/
+     margin:auto;
+}
+
+
+.apply-store-event .body-main-headt-text{
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid rgb(236, 230, 211);
+    border-bottom-color: transparent;
+    margin:0 0 0 0 ;
+    width:40%;
+    border-top-left-radius:3px;
+    border-top-right-radius: 3px; 
+}
+}
+
+/*1024 ipad pro*/
+@media screen and (min-width: 800px)  {
+    .apply-store-event .text-list{
+width:100%;
+margin: 0 0 0 0;
+}
+    .apply-store-event .text-item{
+width: 44.5%;
+min-height:3em;
+line-height:3em;
+float:left;
+margin :0 0 0 2.5%;
+}
+.apply-store-event .padding25{
+    padding: 0 0 0 2.5%;
+}
+.apply-store-event .text-item-left{
+    width:40%;
+    display: inline-block;
+    height:2em;
+line-height:2em;
+float:left;
+text-align: left;
+text-indent: .5em;
+}
+.apply-store-event .text-item-right{
+    width:60%;
+    display: inline-block;
+    min-height:2em;
+line-height:1em;
+float:left;
+margin:0 0 1em 0;
+text-align: left;
+}
+.apply-store-event .width20{
+width: 18.8% ;
+}
+.apply-store-event .width30{
+width: 28% ;
+}
+.apply-store-event .width70{
+width: 77.6% ;
+}
+.apply-store-event .width-all{
+width: 95% ;
+}
+.apply-store-event .text-submit{
+height: 4em;
+line-height:4em;
+width:100%;
+float:left;
+}
+.apply-store-event .text-submit-left{
+    width:45%;
+    text-align: right;
+float:left;
+}
+.apply-store-event .text-submit-right{
+     width:45%;
+     margin: 0 0 0 10%;
+    text-align: left;
+    float:left;
+}
+.apply-store-event .table-class-out{
+    width:94%;
+    margin:auto;
+    /*overflow:scroll;*/
+}
+
+.apply-store-event .body-main-headt-text{
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid rgb(236, 230, 211);
+    border-bottom-color: transparent;
+    margin:0 0 0 0 ;
+    width:18.9%;
+    border-top-left-radius:3px;
+    border-top-right-radius: 3px; 
+}
+}
+
+
+
+
+.apply-store-event .text-item-right .text-item-right-input{
+    width:100%;
+    display: inline-block;
+height: 2.5em;
+    border-radius: 4px;
+    line-height: 1.5em;
+    border: 1px solid rgb(236,230,211);
+}
+/*时间选择*/
+.apply-store-event .text-item-right-input-datepick{
+    width:100%;
+    display: inline-block;
+    height: 2.5em;
+    border-radius: 4px;
+    line-height: 1.5em;
+    border: none;
+}
+
+.apply-store-event .checkbox-text{
+min-height:4em;
+}
+.apply-store-event .padding-halfem{
+padding: 0.4em 0 0 0 ;
+}
+
+.apply-store-event .text-item-right-textearea{
+       resize:none;
+       width:100%;
+       border:1px solid rgb(236,230,211);
+     
+}
+
+.apply-store-event .module-list{
+        width:100%;
+        float:left;
+}
+.apply-store-event .item-table-one{
+    float:left;
+}
+
+
+
+
+
+
+
+

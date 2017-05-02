@@ -1,0 +1,68 @@
+.apply-main{
+      height: 80px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1050px) {
+    .apply-main .height-sixh-thou{
+        height:800px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+      .apply-main .body-main-scroll{
+          width:80%;
+         margin:3.5em 0 1em 10em;
+        border: 1px solid rgb(236, 230, 211); 
+       overflow: hidden;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+.apply-main .body-main{
+   width:103%;
+        overflow-y:scroll;
+}
+
+}
+@media screen and (max-width: 900px) {
+    .apply-main .body-main-scroll{
+         width:94%;
+     margin:3.5em 0 1em 3%;
+     overflow:hidden;
+     border: 1px solid rgb(236, 230, 211);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+    .apply-main .body-main{
+        width:103%;
+        overflow-y:scroll;
+    
+    }
+    
+}
+
+
+.apply-main .apply_main_type{
+    float:left;
+
+}
+.apply-main .apply-main-type-left{
+    float:left;
+height:3em;
+line-height:3em;
+width:30%;
+}
+.apply-main .apply-main-type-center{
+    float:left;
+    height:3em;
+    line-height:3em;
+    width:30%;
+    margin:.5em 0 0 0; 
+}
+.apply-main .apply-main-type-right{
+    float:left;
+        height:3em;
+    line-height:3em;
+width:30%;
+}
