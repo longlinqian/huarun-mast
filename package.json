@@ -1,28 +1,30 @@
-# huarun
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-
-
-# install dependencies
-npm install
-
-开发
-# serve with hot reload at localhost:5050
-npm run serve
-
-
-正式环境的发布
-# build for production with minification
-npm run build
-```
-
-
-环境的库依赖
- "autoprefixer": "^6.4.0",
+{
+  "name": "annual-meeting",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "linlong",
+  "private": true,
+  "scripts": {
+    "serve": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "unit": "karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "browser-sync-spa": "^1.0.3",
+    "element-ui": "^1.2.8",
+    "fastclick": "^1.0.6",
+    "mint-ui": "^2.2.3",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "vue": "^2.0.1",
+    "vue-router": "^2.0.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -76,22 +78,9 @@ npm run build
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1"
-
-
-
-    文件结构
-./build/   ./config/   打包，测试环境的配置
-./dist/  开发生成后的代码
-./node_module/ 依赖包的位置
-
-./src/  开发文件位置
-    ./src/assets/    图片
-    ./src/common/    公共文件
-    ./src/components/ 自定义组件     
-    ./src/view/    
-    ./src/view/main.js  入口 
-
-
-
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
