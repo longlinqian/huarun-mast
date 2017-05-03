@@ -15,7 +15,7 @@ const store = new Vuex.Store({
     area:"",
     id:"",
     urlTest:"http://10.72.1.138:8013/frwk-api-mgnt",
-    url:"http://10.72.1.138:8011/shop-api-mgnt",
+    url:"http://10.72.1.45:8012/tenant-web-site",
     urlstore:"http://10.72.1.138:8011/shop-api-mgnt",
     version:"dev.1.0.0"
   },

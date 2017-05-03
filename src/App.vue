@@ -107,6 +107,7 @@ font-size:12px;
     font-size: 14px;
     color: #1f2d3d;
 }
+
 .tres-jiantou{}
 }
 
@@ -148,4 +149,5 @@ DISPLAY: block;
  .el-table .info-cols {
     color: rebeccapurple;
   }
+  
 </style>

@@ -1,8 +1,4 @@
-.apply-main{
-      height: 80px;
-    width: 100%;
-    background-color: rgb(236, 230, 211);
-}
+
 
 @media screen and (min-width: 1000px) and (max-width: 1050px) {
     .apply-main .height-sixh-thou{
@@ -11,6 +7,11 @@
 }
 
 @media screen and (min-width: 900px) {
+    .apply-main{
+      height: 80px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
       .apply-main .body-main-scroll{
           width:80%;
          margin:3.5em 0 1em 10em;
@@ -26,6 +27,12 @@
 
 }
 @media screen and (max-width: 900px) {
+    .apply-main{
+      height: 50px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
+.apply-main .table-class-out {font-size:12px;}
     .apply-main .body-main-scroll{
          width:94%;
      margin:3.5em 0 1em 3%;

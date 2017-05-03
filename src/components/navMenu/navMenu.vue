@@ -3,10 +3,23 @@
 <div class="nav-menu-main">
 <div  class="nav-menu">
     <div class="nav-menu-max">
-        <div  :class="item.class" v-for="(item,index) in navDatas " @click="tomodule(index)">
+        <div  :class="item.class" v-for="(item,index) in navDatas"   @click="tomodule(index)">
              {{item.name}}
         </div>
     </div>
+</div>
+</div>
+<div class="dropdown-class">
+
+<el-dropdown class="dropdown-class-right" split-button type="primary" @click="handleClick(0)"  @command="handleClick">
+
+  首页
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item :command="index" v-for="(item,index) in navDatas" v-if="index != 0" >{{item.name}}</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+<div class="dropdown-class-left">
+    <!--导航:-->
 </div>
 </div>
 </div>
@@ -70,20 +83,31 @@
                  if(this.$route.name != this.navDatas[id].stateUrl){
             console.log(JSON.stringify(this.navDatas));
             this.$router.push(this.navDatas[id].stateUrl);
-                 }
-           
+                 }        
             },
+              handleCommand(command) {
+                 console.log('click on item '+ command);
+             },
      
             fetchData: function() {
             for(var i = 0; i < this.navDatas.length;i++){
-                // console.log(this.$route.name);
-                //  console.log(this.navDatas[i].stateUrl);
                 if(this.$route.name.indexOf(this.navDatas[i].stateUrl) < 0 ){
                     this.navDatas[i].class = 'nav-menu-item';
                 }else{
                     this.navDatas[i].class = 'nav-menu-item-color';
                 }
              }
+            },
+            handleClick:function(id){
+                console.log("31231"+id)
+                // if(data==0){
+
+                // }else{
+                        if(this.$route.name != this.navDatas[id].stateUrl){
+            console.log(JSON.stringify(this.navDatas));
+            this.$router.push(this.navDatas[id].stateUrl);
+                //  }
+                }
             }
         },
         beforeCreate: function() {
@@ -94,10 +118,10 @@
             this.fetchData();
 
         }
-        ,
-        deactivated () {
-          this.$destroy();
-        }
+        // ,
+        // deactivated () {
+        //   this.$destroy();
+        // }
     }
 </script>
 
@@ -109,6 +133,44 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .nav-menu-header .dropdown-class{
+    display: block;
+    
+}
+
+@media screen and (max-width: 800px){
+.nav-menu-header .nav-menu-main{
+     overflow:hidden;
+   height:3em;
+   width:100%;
+      margin: 0em 0 0 0;
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+.nav-menu-header .dropdown-class-left{
+float:left;
+height:2.3em;
+line-height:2.3em;
+font-size: 1.5em;
+font-weight: bolder;
+ position: absolute;
+    top: 51px;
+    margin:  0 0 0 3%;
+    color:rgb(114,113,113);
+    
+}
+.nav-menu-header .dropdown-class-right{
+    float:right;
+    margin:.7em 0 0 .5em;
+    /*height:1.5em;
+    line-height:1.5em;*/
+    position: absolute;
+    top: 51px;
+    right: 3%;
+}
+}
+@media screen and (min-width: 800px){
 .nav-menu-header .nav-menu-main{
      overflow:hidden;
    height:3em;
@@ -116,7 +178,31 @@
       margin: 0em 0 0 0;
     position: absolute;
     top: 80px;
+    display: none;
 }
+.nav-menu-header .dropdown-class-left{
+float:left;
+height:2.3em;
+line-height:2.3em;
+ position: absolute;
+    top: 81px;
+    margin:  0 0 0 3%;
+    display: none
+    
+}
+.nav-menu-header .dropdown-class-right{
+    float:right;
+    margin:.7em 0 0 .5em;
+    /*height:1.5em;
+    line-height:1.5em;*/
+    position: absolute;
+    top: 81px;
+    left: 3%;
+}
+
+}
+
+
 .nav-menu-header .nav-menu{
    width:100%;
    overflow-x:scroll;
@@ -161,6 +247,9 @@ float:left;
     border-radius: 8px;
     left: 1em;
     border: 1px solid rgb(236, 230, 211);
+}
+.nav-menu-header .dropdown-class{
+    display: none;
 }
 .nav-menu-header .nav-menu{
    width:100%;

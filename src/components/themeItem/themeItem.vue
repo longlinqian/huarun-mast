@@ -61,7 +61,9 @@
 
  }
 
- .theme-item-demo .body-main-head{
+
+ @media screen and (min-width: 1050px) {
+     .theme-item-demo .body-main-head{
     height:2.5em;
     line-height: 2.7em;
     color:rgb(114,113,113);
@@ -71,9 +73,7 @@
     width:91%;
     margin:0 0 0 3%;
     border-bottom: 1px solid rgb(236, 230, 211);
-}
- @media screen and (min-width: 900px) {
-      
+}  
 .theme-item-demo .item-theme{
  text-align:left;
  float:left;
@@ -85,7 +85,18 @@
 }
 
 }
-@media screen and (min-width: 600px) and (max-width:900px){
+@media screen and (min-width: 600px) and (max-width:1050px){
+     .theme-item-demo .body-main-head{
+    height:2.5em;
+    line-height: 2.7em;
+    color:rgb(114,113,113);
+    font-size:1.5em;
+    text-align: left;
+    float:left;
+    width:91%;
+    margin:0 0 0 3%;
+    border-bottom: 1px solid rgb(236, 230, 211);
+}
 .theme-item-demo .item-theme{
  text-align:left;
  float:left;
@@ -100,6 +111,17 @@
 
 
 @media screen and (max-width: 600px) and (min-width: 400px){
+     .theme-item-demo .body-main-head{
+    height:2em;
+    line-height: 2em;
+    color:rgb(114,113,113);
+    font-size:1.2em;
+    text-align: left;
+    float:left;
+    width:91%;
+    margin:0 0 0 3%;
+    border-bottom: 1px solid rgb(236, 230, 211);
+}
 .theme-item-demo .item-theme{
  text-align:left;
  float:left;
@@ -113,6 +135,17 @@
 }
 
 @media screen and (max-width: 400px) and (min-width: 300px){
+     .theme-item-demo .body-main-head{
+    height:2em;
+    line-height: 2em;
+    color:rgb(114,113,113);
+    font-size:1.2em;
+    text-align: left;
+    float:left;
+    width:91%;
+    margin:0 0 0 3%;
+    border-bottom: 1px solid rgb(236, 230, 211);
+}
 .theme-item-demo .item-theme{
  text-align:left;
  float:left;

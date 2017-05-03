@@ -8,7 +8,7 @@
         <div>
           <themeItem v-for="(item,index) in alldatas"
                      v-bind:themeData="{'name':(index+1)+'.'+item.processName,class:'item-theme color-rebeccapurple'}"
-                     @click="toApplyDetailFun(index)">
+                     @click="toApplyDetailFun(item)">
           </themeItem>
         </div>
         <themeItem v-bind:themeData="{'name':'我的申请记录',class:'body-main-head'}"></themeItem>
@@ -174,9 +174,12 @@ export default {
     },
     //进入各个子页面
     toApplyDetailFun: function (id) {
+        if(id.processName  =="店铺活动申请"){
+          this.$router.push('applyMain_applyStoreEvent');
+        }
       switch (id) {
         case 0: break;
-        case 1: this.$router.push('applyMain_applyStoreEvent'); break;
+        case 1:  break;
         case 2: break;
         case 3: break;
         case 4: break;

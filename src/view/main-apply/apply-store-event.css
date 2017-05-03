@@ -67,11 +67,7 @@
 /*当鼠标在水平滚动条下面的按钮上的状态*/
 }
 
-.apply-store-event {
-    height: 80px;
-    width: 100%;
-    background-color: rgb(236, 230, 211);
-}
+
 /* www.divcss5.com公共分页CSS代码 */ 
 /*.apply-store-event BODY { 
 FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
@@ -115,7 +111,7 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
 
 
 
-.apply-store-event .el-input__inner {
+.el-input__inner {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -135,7 +131,7 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
     width: 100%;
 }
 
-.apply-store-event .el-input__icon {
+.el-input__icon {
     position: absolute;
     width: 35px;
     height: 100%;
@@ -145,10 +141,10 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
     color: rgb(236,230,211);
     transition: all .3s;
 }
-.apply-store-event .el-checkbox+.el-checkbox{
+.el-checkbox+.el-checkbox{
         margin-left: 0px;
 }
-.apply-store-event .el-upload {
+.el-upload {
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -158,14 +154,14 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
     border-radius: 3px;
     
 }
-.apply-store-event  .el-checkbox__input.is-checked .el-checkbox__inner {
+.el-checkbox__input.is-checked .el-checkbox__inner {
     /*background-color: rgba(253,215,133,0.4);
     border-color: rgba(253,215,133,0.4);*/
        border-color: rgb(236,230,211);
     background: rgb(236,230,211);
 }
 
-.apply-store-event .el-radio__input .is-checked .el-radio__inner {
+ .el-radio__input .is-checked .el-radio__inner {
     /*border-color: rgba(253,215,133,0.4);
     background: rgba(253,215,133,0.4);*/
        border-color: rgb(236,230,211);
@@ -178,10 +174,28 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
     border-color: rgba(253,215,133,0.4);*/
        border-color: rgba(208,136,41,8);
     background: rgba(208,136,41,8);
+} .el-button--primary  :hover{
+    color: #fff;
+    /*background-color: rgba(253,215,133,0.4);
+    border-color: rgba(253,215,133,0.4);*/
+       border-color: rgba(208,136,41,8);
+    background: rgba(208,136,41,8);
+}
+.el-button--primary:focus, .el-button--primary:hover {
+ border-color: rgba(208,136,41,8);
+    background: rgba(208,136,41,8);
+    color: #fff;
+}
+.el-button--small :hover{
+    padding: 7px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+      border-color: rgba(208,136,41,8);
+    background: rgba(208,136,41,8);
 }
 
 
-.apply-store-event .el-radio__input.is-checked .el-radio__inner{
+.el-radio__input.is-checked .el-radio__inner{
     border-color: rgb(236,230,211);
     background: rgb(236,230,211);
         /*border-color: rgba(253,215,133,0.4);
@@ -192,6 +206,11 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
 
 
 @media screen and (min-width: 800px) {
+    .apply-store-event {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
       .apply-store-event .body-main-scroll{
       width:80%;
     margin:3.5em 0 1em 10em;
@@ -209,6 +228,11 @@ FONT-SIZE: 12px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
 }
 }
 @media screen and (max-width: 800px) {
+    .apply-store-event {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(236, 230, 211);
+}
     .apply-store-event .body-main-scroll{
          width:94%;
     margin:3.5em 0 1em 3%;

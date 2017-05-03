@@ -1,15 +1,12 @@
 import Vue from 'vue'
-
-import App from './App'
-// import ElementUI from 'element-ui'  
+import App from './App' 
 import {DatePicker, 
   Radio,Checkbox,CheckboxGroup,
   Upload,Button,  
   Select,Option, Table,
-  TableColumn,} from 'element-ui';
-  // 引入
+  TableColumn,Dropdown,DropdownMenu,DropdownItem} from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-import FastClick from 'fastclick';
+import FastClick from 'fastclick'
 import Vuex from 'vuex'
 import store from './commonjs/version.config'
 // 自定义组件
@@ -46,13 +43,16 @@ Vue.use(Select)
 Vue.use(Option)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 // Vue.use(timeDear)
 
 
 
 var vueResource = require('vue-resource');
-Vue.use(vueResource);
+Vue.use(vueResource)
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
@@ -101,7 +101,7 @@ Vue.prototype.getName=function(voidFunction){
   var code = getCode();
   this.$store.commit('storename',"5e506fd4-191b-4e3c-b648-6daf35fd34cb");
     voidFunction();
-}
+};
 router.beforeEach(function(to, from, next)  {
   console.log(to.name);
   next();
@@ -111,9 +111,7 @@ export default new Vue({
   el: '#app',
   router,
   store,
-  
   render: h => h(App)
-
 })
 window.addEventListener('load', function(){
   // FastClick.attach(document.body)
