@@ -14,6 +14,8 @@ const store = new Vuex.Store({
     itemtwo:"",
     area:"",
     id:"",
+    // http://10.72.2.84:8081/crland-osp-api/v2/sys/user/getUserInfo?userName=huliang29
+    urlLogin:"http://10.72.2.84:8081/crland-osp-api/v2/sys/user/getUserInfo",
     urlTest:"http://10.72.1.138:8013/frwk-api-mgnt",
     url:"http://10.72.1.45:8012/tenant-web-site",
     urlstore:"http://10.72.1.138:8011/shop-api-mgnt",

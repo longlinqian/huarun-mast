@@ -5,7 +5,7 @@
 
    <div class="img-click-section">
       <div class="img-section">
-        <div class="img-item" v-for="(item,index) in bootImgs" @click="toText(item)">
+        <div class="img-item" v-for="(item,index) in bootImgs" @click="toText(item)" v-if='item.flag'>
           <img :src="item.picUrl" alt=""/>
           <div class="img-name" >{{item.name}}</div>
         </div>
@@ -120,54 +120,91 @@ import luan from '../../assets/2.png'
                 bootImgs: [{
                     'name': '消息提醒',
                     'picUrl': require('../../assets/1.png'),
-                    'stateUrl': 'tab.messageWarning'
+                    'stateUrl': 'tab.messageWarning',
+                    'permiss':"atenant_mdbsx:view:*",
+                    'flag':false
                         // tab.ctRecharge
                 }, {
                     'name': '我的申请',
                     'picUrl': luan,
-                    'stateUrl': 'applyMain'
+                    'stateUrl': 'applyMain',
+                    'permiss':"atenant_mwdsq:view:*"                    ,
+                    'flag':false
                 }, {
                     "name": "我的证照",
                     "picUrl": require('../../assets/3.png'),
-                    "stateUrl": "tab.myPhoto"
+                    "stateUrl": "tab.myPhoto",
+                    'permiss':"atenant_mwdzz:view:*",
+                    'flag':false
                 }, {
                     'name': '我的店铺',
                     'picUrl': require('../../assets/4.png'),
-                    'stateUrl': 'tab.myMart'
+                    'stateUrl': 'tab.myMart',
+                    'permiss':"atenant_mwddp:view:*",
+                    'flag':false
                 }, {
                     'name': '通知公告',
                     'picUrl': require('../../assets/5.png'),
-                    'stateUrl': 'tab.annouce'
+                    'stateUrl': 'tab.annouce',
+                    'permiss':"atenant_mgzgg:view:*",
+                    'flag':false
                 }, {
                     'name': '商场指引',
                     'picUrl': require('../../assets/6.png'),
-                    'stateUrl': 'tab.martGuide'
+                    'stateUrl': 'tab.martGuide',
+                    'permiss':"atenant_mcdzy:view:*",
+                    'flag':false
+                }, {
+                    'name': '财务管理',
+                    'picUrl': require('../../assets/8.png'),
+                    'stateUrl': 'tab.martGuide',
+                    'permiss':"atenant_mcwgl:view:*",
+                    'flag':false
+                }, {
+                    'name': '财务管理',
+                    'picUrl': require('../../assets/8.png'),
+                    'stateUrl': 'tab.martGuide',
+                    'permiss':"atenant_mmgcw:view:*",
+                    'flag':false
                 }],
                 bootTexts: [{
                     'name': '消息提醒',
                     'classItem': "textItem1 textItem-base",
                     'classFont': "textFont1",
                     'classBody': "text-menu-body1 text-menu-body",
-                    'stateUrl': 'tab.martGuide'
+                    'stateUrl': 'tab.martGuide',
+                    'flag':false
                 }, {
                     'name': '通知公告',
                     'classItem': "textItem2 textItem-base",
                     'classFont': "textFont2",
                     'classBody': "text-menu-body2 text-menu-body",
-                    'stateUrl': 'tab.martGuide'
+                    'stateUrl': 'tab.martGuide',
+                    'flag':false
                 }, {
                     'name': '申请记录',
                     'classItem': "textItem3 textItem-base",
                     'classFont': "textFont3",
                     'classBody': "text-menu-body3 text-menu-body",
-                    'stateUrl': 'tab.martGuide'
+                    'stateUrl': 'tab.martGuide',
+                    'flag':false
                 }, {
                     'name': '证照管理',
                     'classItem': "textItem4 textItem-base",
                     'classFont': "textFont4",
                     'classBody': "text-menu-body4 text-menu-body",
-                    'stateUrl': 'tab.martGuide'
-                }],
+                    'stateUrl': 'tab.martGuide',
+                    'flag':false
+                }
+                // , {
+                //     'name': '财务管理',
+                //     'classItem': "textItem4 textItem-base",
+                //     'classFont': "textFont4",
+                //     'classBody': "text-menu-body4 text-menu-body",
+                //     'stateUrl': 'tab.martGuide'
+                // }
+                
+                ],
                 dataItems0: [],
                 dataItems1: [],
                 dataItems2: [],
@@ -184,7 +221,7 @@ import luan from '../../assets/2.png'
                 this.$store.commit('storeitem', item);
                 this.$router.push({
                     name: item.stateUrl
-                });
+                });      
             },
             setShow: function() {
                 if (this.setFlag == false) {
@@ -197,16 +234,45 @@ import luan from '../../assets/2.png'
             fetchData: function() {
               var data = new FormData({"username":"ZHZH1",password:"123456"});
             //   data.append("username":"ZHZH1")
+
+this.$store.state.urlLogin= 'http://10.0.97.163:18013/crland-osp-api/v2/sys/user/getUserInfo'
+//?userName=wangxiaochao
+
+
                 if (this.$route.name == "Index") {
                     var self = this;
+                        var loginName="ZHZH1";
+                        // var loginName="huliang29";
+                     this.$http.get(this.$store.state.urlLogin + '?userName='+loginName, {}).then(function(res) {
+                    //   console.log( JSON.stringify(res));
+                    var tempData = res.body.obj.roleList[0].menuList;
+                      console.log(JSON.stringify(res.body.obj.roleList[0].menuList));
+    this.username  = res.body.obj.name;
+                      for(var i = 0; i < tempData.length;i++){
+                          switch(tempData[i].permission){
+                            case 'atenant_mdbsx:view:*': this.bootImgs[0].flag = true;break;
+                            case 'atenant_mwdsq:view:*': this.bootImgs[1].flag = true;break;
+                            case 'atenant_mwdzz:view:*': this.bootImgs[2].flag = true;break;
+                            case 'atenant_mwddp:view:*': this.bootImgs[3].flag = true;break;
+                            case 'atenant_mgzgg:view:*': this.bootImgs[4].flag = true;break;
+                            case 'atenant_mcdzy:view:*': this.bootImgs[5].flag = true;break;
+                            case 'atenant_mcwgl:view:*': this.bootImgs[6].flag = true;break;
+                            case 'atenant_mmgcw:view:*': this.bootImgs[7].flag = true;break;
+                            default:break;
+                          }  
+                      }
+                   
+                    });
 
                     this.$http.get(this.$store.state.url + '/waitDealt/queryWaitDealtMessage?limit=5&offset=1&read=N', {}).then(function(res) {
-                      console.log( res.body.rows.length== 0);
-                      if (res.success == false ||res.body.rows.length== 0) {
+                      console.log( res.body.count== 0);
+                      console.log( res.body.count);
+                      console.log(JSON.stringify(res));
+                      if (res.success == false ||res.body.count== 0||res.body.count== undefined) {
                               this.dataItems0Flag = false;
                         } else {
                         this.dataItems0 = res.body.rows;
-                        if (this.dataItems0 == null || this.dataItems0.length == 0 || this.dataItems0 == []) {
+                        if (this.dataItems0 == null || this.dataItems0.count == 0 || this.dataItems0 == []||res.body.count== undefined) {
                             this.dataItems0Flag = false;
                         } else {
                               this.dataItems0Flag = true;
@@ -220,8 +286,8 @@ import luan from '../../assets/2.png'
                     });
                     this.$http.get(this.$store.state.url + '/index/queryNotify?page=1&pageSize=5', {}).then(function(res) {
                       
-                      console.log(JSON.stringify(res));
-                        if (res.success == false|| res.body.rows.length== 0) {
+                    //   console.log(JSON.stringify(res));
+                        if (res.success == false|| res.body.count== 0||res.body.count== undefined) {
                              this.dataItems1Flag = false;
                         } else {
                              this.dataItems1Flag = true
@@ -234,8 +300,8 @@ import luan from '../../assets/2.png'
                         }
                     });
                     this.$http.get(this.$store.state.url + '/index/queryApply?offset=1&pageSize=5', {}).then(function(res) {
-                       console.log(JSON.stringify(res));
-                        if (res.success == false|| res.body.rows.length== 0) {
+                    //    console.log(JSON.stringify(res));
+                        if (res.success == false|| res.body.count== 0||res.body.count== undefined) {
                             this.dataItems2Flag = false;
                         } else {
                              this.dataItems2Flag = true;
@@ -246,11 +312,16 @@ import luan from '../../assets/2.png'
                         }
                     });
                     this.$http.get(this.$store.state.url + '/index/queryLicense?page=1&pageSize=5', {}).then(function(res) {
-                      console.log(JSON.stringify(res));
-                        if (res.success == false|| res.body.rows.length== 0) {
+                    //   console.log(JSON.stringify(res));
+                        if (res.success == false|| res.body.count== 0||res.body.count== undefined) {
                             // this.dataItems3 = [];
                             this.dataItems3Flag = false;
                         } else {
+                            this.dataItems3Flag = true;
+                        this.dataItems3 = res.body.rows;
+                        for (var i = 0; i < this.dataItems3.length; i++) {
+                            this.dataItems3[i].applytime = timeDear.formatDate(new Date(this.dataItems3[i].applytime));
+                        }
                         }
                     });
                 }

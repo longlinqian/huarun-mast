@@ -30,6 +30,8 @@
                        type="primary">查询</el-button>
           </div>
         </div>
+        <!--window.location.href="http://www.jb51.net"-->
+        <!--window.open("http://www.jb51.net"); -->
            <div class="table-class-out">
                 <!--<table class="table-class"
                        cellpadding='0'

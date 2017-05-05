@@ -35,7 +35,7 @@
                          :on-remove="handleRemove"
                          :file-list="fileList">
                 <el-button size="small"
-                           type="primary">上传</el-button>
+                           type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
               </el-upload>
             </div>
           </div>

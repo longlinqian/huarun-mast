@@ -61,6 +61,7 @@ var main = require('./components/main.vue');
 var mainRent = require('./view/main-rent/main-rent.vue');
 var applyMain = require('./view/main-apply/apply-main.vue');
 var applyStoreEvent = require('./view/main-apply/apply-store-event.vue');
+var tableTemplate = require('./view/table-template/table-template.vue');
  
 const router = new VueRouter({
   routes :[
@@ -76,6 +77,11 @@ const router = new VueRouter({
       path: '/applyMain',
       name:'applyMain',
       component: applyMain,
+    },
+    {
+      path: '/tableTemplate',
+      name:'tableTemplate',
+      component: tableTemplate,
     }
   ]
 });

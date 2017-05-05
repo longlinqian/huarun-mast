@@ -1,0 +1,30 @@
+.table-template{}
+
+.table-template .table-class{
+    position:relative;
+}
+.table-template .table-class-head{
+    position:relative;
+}
+.table-template .item-table-two-tr{
+     position: relative;
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.table-template .item-table-two{
+    position:relative;
+    float:left;
+   width:100%;
+   min-height:2em;
+   max-height: 12em;
+   overflow: scroll;
+   line-height:1.5em;
+}
+.table-template .img-td{
+    width:2em;
+
+
+}

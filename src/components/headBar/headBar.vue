@@ -8,14 +8,16 @@
 
   <div class="header-bar-set animate" @click="setShow()">
    <img src="../../assets/shezhi.png"  alt="">
-   <div class="my-popuper animate" >
-    <div class="popuper-item-one animate" @click="changePWD()">
+   <div class="my-popuper animate" transiton="fade" >
+       
+    <div class="popuper-item-one animate" @click="changePWD()" name="fade">
         修改密码
     </div>
-      <div class="popuper-item-two animate">
+      <div class="popuper-item-two animate" name="fade">
             退出
     </div>
-</div> 
+   </div>
+
   </div>
 
   <div class="header-bar-center">
@@ -233,12 +235,21 @@
     line-height: 3em;
     border-bottom: 1px solid #cccccc;
     color: rgb(100, 100, 100);
+       transition:all .3s linear;
+  -o-transition:all .3s linear;
+  -moz-transition:all .3s linear;
+  -webkit-transition:all .3s linear;
 }
 
 .header-demo .popuper-item-two {
     height: 3em;
     line-height: 3em;
     color: rgb(100, 100, 100);
+       transition:all .3s linear;
+  -o-transition:all .3s linear;
+  -moz-transition:all .3s linear;
+  -webkit-transition:all .3s linear;
+
 }
 
  /*.header-bar-set:hover .my-popuper{
@@ -263,6 +274,14 @@
   -webkit-backface-visibility:hidden; /* Chrome and Safari */
   -moz-backface-visibility:hidden; /* Firefox */
   -ms-backface-visibility:hidden; /* Internet Explorer */
+   transition: opacity .5s
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 
 </style>
